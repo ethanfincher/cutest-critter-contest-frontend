@@ -68,3 +68,29 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Current Features
+- Users can create, authenticate, and sign in to their own accounts
+- Users can upload a URL to their user and view it
+- Users can view all other images in the application
+- Users can see the current winner of images in the app (random)
+
+## Technologies Used
+- django
+- djoser
+
+
+## Installation Instructions
+To set up the app locally on your own system:
+1. Fork and clone the [project repository](https://github.com/ethanfincher/cutest-critter-contest-frontend)
+2. Install all dependencies locally  
+    ```
+    npm install
+    ```
+3. Start up your new server using npm run
+    ```
+   npm run
+    ```
+    
+ also, big thank you to Bryan Dun and his youtube series on django authentication setups
+ [Django & React JWT Authentication](https://www.youtube.com/watch?v=QFDyXWRYQjY&list=PLJRGQoqpRwdfoa9591BcUS6NmMpZcvFsM)
