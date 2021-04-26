@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 
 function Pictures({ isAuthenticated, user }) {
-	const [allUsers, setAllUsers] = useState([]);
+	const [winners, setWinners] = useState([]);
 
 	function getAllUsers() {
 		const config = {
@@ -14,13 +14,13 @@ function Pictures({ isAuthenticated, user }) {
 			},
 		};
 		try {
-			axios.get(
-				`${process.env.REACT_APP_API_URL}/auth/users/`,
-				config
-			).then(function (res){
-                setAllUsers(res.data)
-            })
-			
+			axios
+				.get(`${process.env.REACT_APP_API_URL}/auth/users/`, config)
+				.then(function (res) {
+					setWinners(res.data.filter((item)=>{
+                        return item.is_winner
+                    }));
+				});
 		} catch (err) {
 			console.log(err);
 		}
@@ -33,9 +33,9 @@ function Pictures({ isAuthenticated, user }) {
 	return (
 		<div>
 			<p>pictures page</p>
-            {allUsers.map((user)=>{
-                return <img src={user.image_url} alt='' key={user.id} />;
-            })}
+			{winners.map((user) => {
+				return <img src={user.image_url} alt='' key={user.id}/>;
+			})}
 		</div>
 	);
 }

@@ -28,6 +28,9 @@ function Navbar({ logout, isAuthenticated, user }) {
 			<li>
 				<Link to='/pictures'>Pictures Page</Link>
 			</li>
+			<li>
+				<Link to='/winners'>Winners</Link>
+			</li>
 		</Fragment>
 	);
 

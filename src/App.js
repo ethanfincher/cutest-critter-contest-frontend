@@ -8,12 +8,13 @@ import ResetPassword from './containers/ResetPassword';
 import ResetPasswordConfirm from './containers/ResetPasswordConfirm';
 import Signup from './containers/Signup';
 import Pictures from './containers/Pictures'
+import UploadPicture from './containers/UploadPicture';
+import Winners from './containers/Winners'
 
 import { Provider } from 'react-redux';
 import store from './store';
 
 import Layout from './hocs/Layouts';
-import UploadPicture from './containers/UploadPicture';
 
 export default function App() {
 	return (
@@ -36,6 +37,7 @@ export default function App() {
 							component={UploadPicture} />
 						<Route exact path='/pictures' component={Pictures} />
 						<Route exact path='/activate/:uid/:token' component={Activate} />
+						<Route exact path='/winners' component={Winners} />
 					</Switch>
 				</Layout>
 			</Router>
